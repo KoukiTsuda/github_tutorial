@@ -36,9 +36,32 @@ git init
 
 ![下の「Create Rrepository」を選択](git使い方_photo\2.png)
 
-#ローカルリポジトリをリモートリポジトリにアップロードするための準備
+
+#全てのファイルをリモートリポジトリにアップロードしたい場合
 git add .
 git status
+git commit -m "～～～"
 
-git add -- "git使い方.md" "git使い方_photo"
-git commit -m "手順書とその画像を追加"
+#個別にアップロードしたい場合
+git add -- "git使い方.md" "git使い方_photo" ←アップロードしたいファイルを選択
+git status                                 ←アップロード予定のファイルを表示
+git commit -m "手順書とその画像を追加"       ←ローカルリポジトリに変更を記録、コメントも付けられる
+
+git add -- hello_world.py
+git status
+git commit -m "hello_world.pyを追加"
+
+#アップロード先のリモートリポジトリのリンクをoriginという名前で登録
+git remote add origin https://github.com/KoukiTsuda/github_tutorial.git
+
+#masterブランチにアップロード
+→ -uをつけると次回以降　git push　で同じ操作可能
+git push -u origin master
+
+
+master何？
+
+#ローカルにリポジトリをダウンロードする方法
+ git clone した場合、コマンドを実行した場所の中に、リポジトリ名のフォルダが作られる
+ そのフォルダがリポジトリのルートになる
+git clone https://github.com/KoukiTsuda/github_tutorial.git
